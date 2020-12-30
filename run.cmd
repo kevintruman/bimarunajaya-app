@@ -1,0 +1,1 @@
+java -jar target\bimarunajaya-0.0.1.jar --spring.config.location=conf.properties

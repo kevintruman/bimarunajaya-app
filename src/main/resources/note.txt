@@ -1,0 +1,87 @@
+database
+
+-tracking
+(user) send_by
+(user) from_by
+(station) transit_id
+(user) confirm_by
+delivery_status
+approve_status (status dibuat accounting & head)
+
+-package
+(user) create_by
+(station) station_id
+address_from
+send_name
+send_phone
+address_to
+receive_name
+receive_phone
+package_description
+weight
+dimension
+price
+price_description
+last_delivery_status
+
+
+-parameter
+value
+description
+--
+dimension(small, medium, large) (ditambah)
+weight (dikali)
+tax (ditambah)
+discount (persen)
+
+-type
+group_id
+name
+description
+--
+status(send, transit, sent)
+type user(user, station)
+role (cashier, admin, delivery, accounting, head)
+
+
+-user
+username
+password
+email
+phone
+full_name
+type_user_id
+role_id
+station_id
+
+
+-access
+role_id
+menu_name
+path
+
+
+design program
+
+-cashier/admin
+--dashboard
+send, transit, sent (stasiun sendiri)
+--data package
+list (stasiun sendiri)
+input & generate qr, resi, harga
+edit (stasiun sendiri)
+hapus (stasiun sendiri)
+
+
+-delivery
+--dashboard
+send/pending (berdasarkan user sendiri)
+--data package
+list (berdasarkan user sendiri)
+approve
+
+-accounting
+--dashboard
+income, transaction(diambil dari package)
+--data package
+list (perbulan)
